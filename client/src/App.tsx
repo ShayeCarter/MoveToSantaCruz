@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Neighborhoods from "./pages/Neighborhoods";
 import LiveOak from "./pages/LiveOak";
+import Capitola from "./pages/Capitola";
 import Buyers from "./pages/Buyers";
 import Sellers from "./pages/Sellers";
 import Blog from "./pages/Blog";
@@ -22,8 +23,8 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/neighborhoods" component={Neighborhoods} />
-      <Route path="/live-oak" component={LiveOak} />
-      <Route path="/buyers" component={Buyers} />
+      <Route path={"/live-oak"} component={LiveOak} />
+      <Route path={"/capitola"} component={Capitola} />     <Route path="/buyers" component={Buyers} />
       <Route path="/sellers" component={Sellers} />
       <Route path="/blog" component={Blog} />
       <Route path="/contact" component={Contact} />
