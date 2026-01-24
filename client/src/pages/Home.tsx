@@ -172,6 +172,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Homepage Contact Form */}
+      <section className="py-20 bg-primary text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/santa-cruz-lifestyle.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay" />
+        <div className="container relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-secondary font-bold tracking-widest uppercase text-sm">Let's Connect</span>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold mt-4 mb-6">
+                Ready to Make Your Move?
+              </h2>
+              <p className="text-xl text-white/80 mb-8 leading-relaxed">
+                Whether you're just curious about the market or ready to buy next week, I'd love to chat. No pressure, just honest advice from a local.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="bg-white/10 p-3 rounded-full">
+                    <MapPin className="h-6 w-6 text-secondary" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg">Live Oak Specialist</p>
+                    <p className="text-white/70 text-sm">Serving all of Santa Cruz County</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="bg-white/10 p-3 rounded-full">
+                    <CheckCircle2 className="h-6 w-6 text-secondary" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-lg">Quick Response</p>
+                    <p className="text-white/70 text-sm">I usually reply within a few hours</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white text-foreground p-8 rounded-xl shadow-2xl">
+              <h3 className="font-serif text-2xl font-bold text-primary mb-6">Send a Message</h3>
+              <form className="space-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label htmlFor="home-name" className="text-sm font-medium">Name</label>
+                    <input type="text" id="home-name" className="w-full p-3 border rounded-md bg-background" placeholder="Your Name" />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="home-phone" className="text-sm font-medium">Phone</label>
+                    <input type="tel" id="home-phone" className="w-full p-3 border rounded-md bg-background" placeholder="(831) 555-0123" />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="home-email" className="text-sm font-medium">Email</label>
+                  <input type="email" id="home-email" className="w-full p-3 border rounded-md bg-background" placeholder="you@example.com" />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="home-message" className="text-sm font-medium">How can I help?</label>
+                  <textarea id="home-message" rows={3} className="w-full p-3 border rounded-md bg-background" placeholder="I'm looking to buy in Live Oak..."></textarea>
+                </div>
+                <Button size="lg" className="w-full bg-primary text-white hover:bg-primary/90 font-bold text-lg">
+                  Get in Touch
+                </Button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services / Value Prop */}
       <section className="py-20 bg-background">
         <div className="container">
