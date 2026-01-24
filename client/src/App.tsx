@@ -14,6 +14,7 @@ import Buyers from "./pages/Buyers";
 import Sellers from "./pages/Sellers";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import Search from "./pages/Search";
 
 function Router() {
   return (
@@ -26,6 +27,7 @@ function Router() {
       <Route path="/sellers" component={Sellers} />
       <Route path="/blog" component={Blog} />
       <Route path="/contact" component={Contact} />
+      <Route path="/search" component={Search} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

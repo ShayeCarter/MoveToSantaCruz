@@ -19,6 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
+    { href: "/search", label: "Search" },
     { href: "/neighborhoods", label: "Neighborhoods" },
     { href: "/live-oak", label: "Live Oak" },
     { href: "/buyers", label: "Buyers" },
@@ -134,6 +135,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div>
             <h4 className="font-bold mb-4 text-lg">Explore</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
+              <li><Link href="/search"><span className="hover:text-white cursor-pointer">Search Properties</span></Link></li>
               <li><Link href="/live-oak"><span className="hover:text-white cursor-pointer">Live Oak Living</span></Link></li>
               <li><Link href="/neighborhoods"><span className="hover:text-white cursor-pointer">Neighborhood Guides</span></Link></li>
               <li><Link href="/buyers"><span className="hover:text-white cursor-pointer">Buyer Resources</span></Link></li>
