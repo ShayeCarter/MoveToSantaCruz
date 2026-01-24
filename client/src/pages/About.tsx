@@ -1,143 +1,143 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Home, BadgeDollarSign, Coffee } from "lucide-react";
 
 export default function About() {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="relative py-20 bg-accent/20">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-secondary font-bold tracking-widest uppercase text-sm">About Shaye</span>
-            <h1 className="font-serif text-4xl md:text-6xl font-bold text-primary mt-4 mb-6">
-              More Than Just An Agent
+      {/* Hero Section */}
+      <section className="relative py-20 bg-secondary/10">
+        <div className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Meet Shaye Carter</span>
+            <h1 className="font-serif text-4xl md:text-6xl font-bold text-primary mb-6">
+              Your Local Guide to Santa Cruz Living
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              I'm a neighbor, a mom, and a dual-licensed real estate & mortgage professional dedicated to helping you build your life in Santa Cruz.
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              Realtor® + Mortgage Loan Officer. I live in Live Oak, I work in Santa Cruz, and I absolutely love what I do.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Story */}
-      <section className="py-20">
-        <div className="container grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-            <h2 className="font-serif text-3xl font-bold text-primary mb-4">My Story</h2>
-            <p>
-              I live right here in Live Oak with my family, and I absolutely love this community. From the morning fog rolling over the cliffs to the vibrant local business scene, there's nowhere else I'd rather be.
-            </p>
-            <p>
-              My journey into real estate wasn't traditional. I realized early on that the industry was often transactional and cold. I wanted to change that. I wanted to bring a "coffee with a friend" approach to one of the biggest financial decisions of your life.
-            </p>
-            <p>
-              That's why I got dual-licensed. I didn't just want to open doors; I wanted to open possibilities. By understanding both the property side and the financing side, I can guide you through the entire process seamlessly, avoiding the pitfalls that often catch buyers and sellers off guard.
-            </p>
-            
-            <div className="bg-secondary/10 p-6 rounded-lg border-l-4 border-secondary mt-8">
-              <h3 className="font-serif text-xl font-bold text-primary mb-2">My Philosophy</h3>
-              <p className="italic text-primary/80">
-                "Know Before You Owe." I believe in radical transparency and education. You should never feel pressured or confused. My job is to empower you with information so you can make the best decision for your future.
-              </p>
+            <div className="flex gap-4">
+              <Link href="/contact">
+                <Button size="lg" className="font-bold bg-primary text-white hover:bg-primary/90">
+                  Let's Grab Coffee
+                </Button>
+              </Link>
+              <Link href="/search">
+                <Button variant="outline" size="lg" className="font-bold border-primary text-primary hover:bg-primary/10">
+                  Search Homes
+                </Button>
+              </Link>
             </div>
           </div>
-          
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
+          <div className="order-1 lg:order-2 relative">
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl relative z-10">
               <img 
                 src="/images/shaye-meeting.jpg" 
-                alt="Shaye working" 
-                className="rounded-lg shadow-lg w-full h-64 object-cover"
-              />
-              <img 
-                src="/images/kitchen-interior.jpg" 
-                alt="Interior design" 
-                className="rounded-lg shadow-lg w-full h-64 object-cover mt-12"
+                alt="Shaye Carter" 
+                className="w-full h-full object-cover"
               />
             </div>
+            {/* Decorative elements */}
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary rounded-full z-0 opacity-50" />
+            <div className="absolute -top-6 -right-6 w-48 h-48 border-4 border-primary/10 rounded-full z-0" />
           </div>
         </div>
       </section>
 
-      {/* The Dual License Advantage */}
-      <section className="py-20 bg-primary text-white">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">The Dual License Advantage</h2>
-              <p className="text-lg text-white/80 mb-8 leading-relaxed">
-                Most people hire a real estate agent and a loan officer separately. This often leads to miscommunication, delays, and stress. When you work with me, you get a unified team of one.
+      {/* Bio Section */}
+      <section className="py-20">
+        <div className="container max-w-4xl mx-auto">
+          <div className="prose prose-lg prose-headings:font-serif prose-headings:text-primary text-muted-foreground mx-auto">
+            <h2 className="text-center text-3xl font-bold mb-12">Hey, I'm Shaye Carter!</h2>
+            
+            <p className="lead text-xl text-center mb-12">
+              I live in Live Oak, I work in Santa Cruz, and I absolutely love what I do.
+            </p>
+
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-border/50 mb-12">
+              <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                <Coffee className="h-6 w-6 text-secondary" />
+                Here's my story
+              </h3>
+              <p>
+                I'm not just a Realtor. I'm also a Mortgage Loan Officer. That means when we work together, you get someone who understands both sides of your transaction. No back-and-forth between different people. No confusion. Just clear guidance from start to finish.
               </p>
+            </div>
+
+            <h3 className="text-2xl font-bold mb-6 text-center">What this means for you:</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose">
+              <div className="flex gap-4 items-start">
+                <div className="bg-secondary/20 p-2 rounded-full mt-1 shrink-0">
+                  <Home className="h-5 w-5 text-primary" />
+                </div>
+                <p className="text-muted-foreground">I know this market inside and out (because I literally live here)</p>
+              </div>
               
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="bg-secondary/20 p-2 rounded-full">
-                    <CheckCircle2 className="h-6 w-6 text-secondary" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xl">Seamless Communication</h4>
-                    <p className="text-white/70">No playing telephone between your agent and lender. I handle it all.</p>
-                  </div>
+              <div className="flex gap-4 items-start">
+                <div className="bg-secondary/20 p-2 rounded-full mt-1 shrink-0">
+                  <CheckCircle2 className="h-5 w-5 text-primary" />
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="bg-secondary/20 p-2 rounded-full">
-                    <CheckCircle2 className="h-6 w-6 text-secondary" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xl">Strategic Offers</h4>
-                    <p className="text-white/70">I can write offers that are perfectly tailored to your financing, making them stronger to sellers.</p>
-                  </div>
+                <p className="text-muted-foreground">I spot opportunities others miss in today's changing market</p>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <div className="bg-secondary/20 p-2 rounded-full mt-1 shrink-0">
+                  <BadgeDollarSign className="h-5 w-5 text-primary" />
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="bg-secondary/20 p-2 rounded-full">
-                    <CheckCircle2 className="h-6 w-6 text-secondary" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xl">$2,000 Closing Savings</h4>
-                    <p className="text-white/70">Through my partnership with Revest, my clients save big at the closing table.</p>
-                  </div>
+                <p className="text-muted-foreground">I can help you understand financing options that actually make sense</p>
+              </div>
+
+              <div className="flex gap-4 items-start">
+                <div className="bg-secondary/20 p-2 rounded-full mt-1 shrink-0">
+                  <BadgeDollarSign className="h-5 w-5 text-primary" />
                 </div>
+                <p className="text-muted-foreground">You'll save $2,000 at closing through our Revest partnership</p>
+              </div>
+
+              <div className="flex gap-4 items-start md:col-span-2">
+                <div className="bg-secondary/20 p-2 rounded-full mt-1 shrink-0">
+                  <CheckCircle2 className="h-5 w-5 text-primary" />
+                </div>
+                <p className="text-muted-foreground">You get a trusted advisor, not just an agent chasing a commission</p>
               </div>
             </div>
-            <div className="bg-white/5 p-8 rounded-xl border border-white/10">
-              <h3 className="font-serif text-2xl font-bold mb-6 text-center">Credentials</h3>
-              <ul className="space-y-4 text-sm md:text-base">
-                <li className="flex justify-between border-b border-white/10 pb-2">
-                  <span>Real Estate License</span>
-                  <span className="font-mono text-secondary">CA DRE #02105568</span>
-                </li>
-                <li className="flex justify-between border-b border-white/10 pb-2">
-                  <span>Mortgage Licensing</span>
-                  <span className="font-mono text-secondary">CA, TX, NV, OR</span>
-                </li>
-                <li className="flex justify-between border-b border-white/10 pb-2">
-                  <span>Specialty</span>
-                  <span className="text-right">Live Oak & Santa Cruz Coastal</span>
-                </li>
-                <li className="flex justify-between pt-2">
-                  <span>Experience</span>
-                  <span className="text-right">Residential Sales & Financing</span>
-                </li>
-              </ul>
+
+            <div className="mt-12 text-center">
+              <p className="text-lg mb-8">
+                Whether you're buying your first home, selling to upsize, or just exploring your options, I'm here to make the process clear, simple, and successful. Let's grab coffee and talk about your goals.
+              </p>
+              <Link href="/contact">
+                <Button size="lg" className="font-bold bg-primary text-white hover:bg-primary/90">
+                  Contact Shaye
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-background text-center">
-        <div className="container max-w-2xl">
-          <h2 className="font-serif text-3xl font-bold text-primary mb-6">Let's Grab Coffee</h2>
-          <p className="text-muted-foreground mb-8">
-            I'd love to hear your story and help you achieve your real estate goals in Santa Cruz. No pressure, just good conversation.
-          </p>
-          <Link href="/contact">
-            <Button size="lg" className="bg-primary text-white hover:bg-primary/90">
-              Contact Shaye
-            </Button>
-          </Link>
+      {/* Stats / Trust Builders */}
+      <section className="py-20 bg-primary text-white">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div className="p-6">
+              <div className="text-5xl font-serif font-bold mb-2 text-secondary">Dual</div>
+              <div className="text-xl font-light opacity-90">License Advantage</div>
+              <p className="mt-4 text-sm opacity-75 max-w-xs mx-auto">Real Estate + Mortgage expertise in one person.</p>
+            </div>
+            <div className="p-6 border-t md:border-t-0 md:border-l border-white/20">
+              <div className="text-5xl font-serif font-bold mb-2 text-secondary">$2k</div>
+              <div className="text-xl font-light opacity-90">Closing Savings</div>
+              <p className="mt-4 text-sm opacity-75 max-w-xs mx-auto">Exclusive benefit for my clients through Revest.</p>
+            </div>
+            <div className="p-6 border-t md:border-t-0 md:border-l border-white/20">
+              <div className="text-5xl font-serif font-bold mb-2 text-secondary">100%</div>
+              <div className="text-xl font-light opacity-90">Local Expert</div>
+              <p className="mt-4 text-sm opacity-75 max-w-xs mx-auto">Live Oak resident focused on your success.</p>
+            </div>
+          </div>
         </div>
       </section>
     </Layout>
