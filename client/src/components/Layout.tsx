@@ -38,12 +38,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container flex items-center justify-between">
           <Link href="/">
             <div className="flex flex-col cursor-pointer">
-              <span className={`font-serif text-2xl font-bold tracking-tight ${isScrolled ? "text-primary" : "text-primary"}`}>
-                SHAYE CARTER
-              </span>
-              <span className={`text-xs tracking-widest uppercase ${isScrolled ? "text-muted-foreground" : "text-muted-foreground"}`}>
-                Move to Santa Cruz
-              </span>
+              <img 
+                src={isScrolled ? "/images/logo-dark.png" : "/images/logo-light.png"} 
+                alt="Shaye Carter Logo" 
+                className="h-12 w-auto object-contain"
+              />
             </div>
           </Link>
 
@@ -53,7 +52,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link key={link.href} href={link.href}>
                 <span 
                   className={`text-sm font-medium transition-colors hover:text-primary cursor-pointer ${
-                    location === link.href ? "text-primary font-bold" : "text-foreground/80"
+                    location === link.href 
+                      ? (isScrolled ? "text-primary font-bold" : "text-white font-bold") 
+                      : (isScrolled ? "text-foreground/80" : "text-white/90")
                   }`}
                 >
                   {link.label}
@@ -117,8 +118,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="container grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="flex flex-col gap-4">
             <div>
-              <h3 className="font-serif text-2xl font-bold">SHAYE CARTER</h3>
-              <p className="text-primary-foreground/80 text-sm uppercase tracking-wider">Real Estate + Mortgage</p>
+              <img src="/images/logo-light.png" alt="Shaye Carter Logo" className="h-16 w-auto mb-4 object-contain" />
             </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Helping you navigate the Santa Cruz market with confidence. 
