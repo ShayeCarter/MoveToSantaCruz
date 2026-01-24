@@ -6,15 +6,8 @@ import { useState, useEffect } from "react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // Always solid header now
+  const isScrolled = true;
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -32,15 +25,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen flex flex-col font-sans">
       {/* Header */}
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
-        }`}
+        className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm py-3"
       >
         <div className="container flex items-center justify-between">
           <Link href="/">
             <div className="flex flex-col cursor-pointer">
               <img 
-                src={isScrolled ? "/images/logo-dark.png" : "/images/logo-light.png"} 
+                src="/images/logo-dark.png" 
                 alt="Shaye Carter Logo" 
                 className="h-12 w-auto object-contain"
               />
@@ -54,8 +45,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <span 
                   className={`text-sm font-medium transition-colors hover:text-primary cursor-pointer ${
                     location === link.href 
-                      ? (isScrolled ? "text-primary font-bold" : "text-white font-bold") 
-                      : (isScrolled ? "text-foreground/80" : "text-white/90")
+                      ? "text-primary font-bold" 
+                      : "text-foreground/80"
                   }`}
                 >
                   {link.label}
