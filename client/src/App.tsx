@@ -13,7 +13,8 @@ import LiveOak from "./pages/LiveOak";
 import Capitola from "./pages/Capitola";
 import Aptos from "./pages/Aptos";
 import Buyers from "./pages/Buyers";
-import Sellers from "./pages/Sellers";
+import Sellers from "@/pages/Sellers";
+import Relocation from "@/pages/Relocation";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Search from "./pages/Search";
@@ -28,6 +29,7 @@ function Router() {
       <Route path={"/capitola"} component={Capitola} />
       <Route path={"/aptos"} component={Aptos} />     <Route path="/buyers" component={Buyers} />
       <Route path="/sellers" component={Sellers} />
+      <Route path="/relocation" component={Relocation} />
       <Route path="/blog" component={Blog} />
       <Route path="/contact" component={Contact} />
       <Route path="/search" component={Search} />

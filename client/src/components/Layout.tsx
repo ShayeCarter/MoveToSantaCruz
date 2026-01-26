@@ -19,6 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     { href: "/aptos", label: "Aptos" },
     { href: "/buyers", label: "Buyers" },
     { href: "/sellers", label: "Sellers" },
+    { href: "/relocation", label: "Relocation" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
   ];
@@ -135,6 +136,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <li><Link href="/neighborhoods"><span className="hover:text-white cursor-pointer">Neighborhood Guides</span></Link></li>
               <li><Link href="/buyers"><span className="hover:text-white cursor-pointer">Buyer Resources</span></Link></li>
               <li><Link href="/sellers"><span className="hover:text-white cursor-pointer">Seller Resources</span></Link></li>
+              <li><Link href="/relocation"><span className="hover:text-white cursor-pointer">Relocation Guide</span></Link></li>
               <li><Link href="/blog"><span className="hover:text-white cursor-pointer">Market Insights</span></Link></li>
             </ul>
           </div>

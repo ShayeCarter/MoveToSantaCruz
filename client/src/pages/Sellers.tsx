@@ -1,104 +1,166 @@
-import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
+import Layout from "@/components/Layout";
+import { CheckCircle2, Download, TrendingUp, DollarSign, Users } from "lucide-react";
 import { Link } from "wouter";
-import { BarChart3, Camera, PenTool, Megaphone } from "lucide-react";
 
 export default function Sellers() {
   return (
     <Layout>
-      <section className="bg-primary text-white py-20">
-        <div className="container text-center">
-          <span className="text-secondary font-bold tracking-widest uppercase text-sm">Seller Resources</span>
-          <h1 className="font-serif text-4xl md:text-6xl font-bold mt-4 mb-6">Sell Smart, Sell for More</h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Strategic marketing and expert negotiation to maximize your return in the Santa Cruz market.
-          </p>
+      {/* Hero Section */}
+      <div className="relative bg-primary py-20 text-white">
+        <div className="absolute inset-0 overflow-hidden">
+          <img 
+            src="/images/kitchen-interior.jpg" 
+            alt="Luxury Kitchen" 
+            className="w-full h-full object-cover opacity-20"
+          />
         </div>
-      </section>
+        <div className="container relative z-10 text-center">
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">
+            Maximize Your Home's Value & Sell with Confidence
+          </h1>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 text-blue-50">
+            Avoid the "Six-Figure Mistake" with a strategic approach to pricing, preparation, and marketing.
+          </p>
+          <Button size="lg" className="bg-accent text-primary hover:bg-white font-bold text-lg px-8 py-6 h-auto shadow-lg" asChild>
+            <a href="/sellers-guide.pdf" target="_blank" rel="noopener noreferrer">
+              <Download className="mr-2 h-6 w-6" /> Download the Complete Seller's Guide
+            </a>
+          </Button>
+        </div>
+      </div>
 
-      <section className="py-20">
+      {/* The Six-Figure Mistake Section */}
+      <section className="py-16 bg-white">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-            <div>
-              <h2 className="font-serif text-3xl font-bold text-primary mb-6">More Than Just a "For Sale" Sign</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                Selling a home in Santa Cruz requires more than just listing it on the MLS. It requires a comprehensive strategy that highlights the unique lifestyle your home offers.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I use professional storytelling, high-end visuals, and targeted digital marketing to put your home in front of the right buyers—whether they are locals looking to upgrade or tech workers moving from Silicon Valley.
-              </p>
-            </div>
-            <div className="relative">
-              <img 
-                src="/images/kitchen-interior.jpg" 
-                alt="Staged Home Interior" 
-                className="rounded-xl shadow-xl w-full object-cover"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg max-w-xs hidden md:block">
-                <p className="font-serif text-xl font-bold text-primary">"Shaye got us $50k over asking in one weekend!"</p>
-                <p className="text-sm text-muted-foreground mt-2">— Recent Seller Review</p>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-serif font-bold text-primary mb-6 text-center">The Six-Figure Mistake Most Sellers Make</h2>
+            <p className="text-lg text-gray-600 mb-8 text-center">
+              According to recent market analysis, the difference between strategic selling and hoping for the best can cost Santa Cruz sellers anywhere from $50,000 to $150,000 in lost equity.
+            </p>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-red-50 p-6 rounded-xl border border-red-100">
+                <h3 className="text-xl font-bold text-red-800 mb-3">Seller A (The "Hope" Strategy)</h3>
+                <ul className="space-y-2 text-red-700">
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1">❌</span> Lists "as-is" with basic photos
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1">❌</span> Prices based on Zillow estimate
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1">❌</span> Sits on market, reduces price
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="mt-1">❌</span> Settles for less than potential
+                  </li>
+                </ul>
               </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-accent/20 p-6 rounded-xl text-center hover:bg-accent/30 transition-colors">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-primary shadow-sm">
-                <BarChart3 className="h-6 w-6" />
+              <div className="bg-green-50 p-6 rounded-xl border border-green-100">
+                <h3 className="text-xl font-bold text-green-800 mb-3">Seller B (The Strategic Approach)</h3>
+                <ul className="space-y-2 text-green-700">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 mt-0.5" /> Invests in strategic improvements
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 mt-0.5" /> Prices based on deep market analysis
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 mt-0.5" /> Professional staging & marketing
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="h-5 w-5 mt-0.5" /> Generates multiple offers & premium price
+                  </li>
+                </ul>
               </div>
-              <h3 className="font-bold text-lg mb-2">Data-Driven Pricing</h3>
-              <p className="text-sm text-muted-foreground">Accurate valuation based on real-time market trends, not just algorithms.</p>
-            </div>
-            
-            <div className="bg-accent/20 p-6 rounded-xl text-center hover:bg-accent/30 transition-colors">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-primary shadow-sm">
-                <Camera className="h-6 w-6" />
-              </div>
-              <h3 className="font-bold text-lg mb-2">Pro Photography</h3>
-              <p className="text-sm text-muted-foreground">Stunning high-res photos, drone shots, and video tours to make your home shine.</p>
-            </div>
-            
-            <div className="bg-accent/20 p-6 rounded-xl text-center hover:bg-accent/30 transition-colors">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-primary shadow-sm">
-                <PenTool className="h-6 w-6" />
-              </div>
-              <h3 className="font-bold text-lg mb-2">Staging Advice</h3>
-              <p className="text-sm text-muted-foreground">Expert consultation on how to prep your home to appeal to today's buyers.</p>
-            </div>
-            
-            <div className="bg-accent/20 p-6 rounded-xl text-center hover:bg-accent/30 transition-colors">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4 text-primary shadow-sm">
-                <Megaphone className="h-6 w-6" />
-              </div>
-              <h3 className="font-bold text-lg mb-2">Digital Marketing</h3>
-              <p className="text-sm text-muted-foreground">Targeted social media campaigns and email marketing to my extensive network.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-secondary/10">
-        <div className="container max-w-3xl text-center">
-          <h2 className="font-serif text-3xl font-bold text-primary mb-6">What's Your Home Worth?</h2>
-          <p className="text-muted-foreground mb-8">
-            Automated estimates are a starting point, but they don't see your upgrades or know your neighborhood like I do. Get a custom, professional valuation.
-          </p>
-          <div className="bg-white p-8 rounded-xl shadow-lg text-left">
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label htmlFor="address" className="text-sm font-medium">Property Address</label>
-                  <input type="text" id="address" className="w-full p-2 border rounded-md" placeholder="123 Ocean Ave" />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">Email Address</label>
-                  <input type="email" id="email" className="w-full p-2 border rounded-md" placeholder="you@example.com" />
-                </div>
-              </div>
-              <Button className="w-full bg-primary text-white hover:bg-primary/90">
-                Get My Free Valuation
+      {/* Live Oak Advantage Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-accent font-bold tracking-widest uppercase text-sm">Specialist Insight</span>
+              <h2 className="text-3xl font-serif font-bold text-primary mt-2 mb-6">The Live Oak Advantage</h2>
+              <p className="text-lg text-gray-600 mb-6">
+                If you own property in Live Oak, you're sitting on one of Santa Cruz County's best-kept secrets. While other neighborhoods have seen dramatic price swings, Live Oak has quietly become the county's premier value proposition.
+              </p>
+              <p className="text-lg text-gray-600 mb-6">
+                As a Live Oak resident since 2018, I know exactly how to position these homes to appeal to young families and professionals seeking space, value, and community.
+              </p>
+              <Button variant="outline" className="border-primary text-primary" asChild>
+                <Link href="/live-oak">Explore Live Oak Guide</Link>
               </Button>
-            </form>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-sm">
+              <h3 className="text-xl font-bold mb-6">Why Live Oak Sells</h3>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3">
+                  <div className="bg-blue-50 p-2 rounded-full"><DollarSign className="h-5 w-5 text-primary" /></div>
+                  <span>Superior value per square foot</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="bg-blue-50 p-2 rounded-full"><TrendingUp className="h-5 w-5 text-primary" /></div>
+                  <span>Larger lots averaging 7,200 sq ft</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="bg-blue-50 p-2 rounded-full"><Users className="h-5 w-5 text-primary" /></div>
+                  <span>Authentic community feel buyers crave</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4-Step Process Section */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <h2 className="text-3xl font-serif font-bold text-center mb-12">My Proven 4-Step Selling Framework</h2>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+              <h3 className="text-xl font-bold mb-2">Prepare It</h3>
+              <p className="text-gray-600 text-sm">Comprehensive assessment, strategic improvements, and professional staging to maximize ROI.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+              <h3 className="text-xl font-bold mb-2">Advertise It</h3>
+              <p className="text-gray-600 text-sm">Professional photography, 3D tours, and multi-channel marketing campaigns for maximum exposure.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+              <h3 className="text-xl font-bold mb-2">Show It</h3>
+              <p className="text-gray-600 text-sm">Strategic open houses and private showings designed to generate competitive interest.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+              <h3 className="text-xl font-bold mb-2">Sell It</h3>
+              <p className="text-gray-600 text-sm">Expert negotiation leveraging my dual license to vet buyer financing and secure the best terms.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-primary text-white text-center">
+        <div className="container">
+          <h2 className="text-3xl font-serif font-bold mb-6">Ready to Maximize Your Sale?</h2>
+          <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-8">
+            Get the full details on pricing strategies, staging tips, and market analysis in my complete guide.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-accent text-primary hover:bg-white font-bold" asChild>
+              <a href="/sellers-guide.pdf" target="_blank" rel="noopener noreferrer">
+                <Download className="mr-2 h-5 w-5" /> Download Seller's Guide
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+              <Link href="/contact">Get a Free Home Valuation</Link>
+            </Button>
           </div>
         </div>
       </section>
