@@ -36,7 +36,7 @@ export default function Search() {
           
           <div className="w-full bg-white rounded-xl shadow-sm border border-border overflow-hidden min-h-[800px]">
             <iframe 
-              src="https://movetosantacruz.com/api-site/widget/78524" 
+              src="https://movetosantacruz.com/api-site/widget/78723" 
               id="chimeWidget" 
               frameBorder="0" 
               style={{ width: '100%', height: '100%', minHeight: '800px' }}
