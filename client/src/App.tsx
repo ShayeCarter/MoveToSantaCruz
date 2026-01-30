@@ -9,9 +9,12 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Neighborhoods from "./pages/Neighborhoods";
-import LiveOak from "./pages/LiveOak";
-import Capitola from "./pages/Capitola";
-import Aptos from "./pages/Aptos";
+import LiveOak from "@/pages/LiveOak";
+import Capitola from "@/pages/Capitola";
+import Aptos from "@/pages/Aptos";
+import SantaCruz from "@/pages/SantaCruz";
+import Soquel from "@/pages/Soquel";
+import ScottsValley from "@/pages/ScottsValley";
 import Buyers from "./pages/Buyers";
 import Sellers from "@/pages/Sellers";
 import Relocation from "@/pages/Relocation";
@@ -25,9 +28,13 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/neighborhoods" component={Neighborhoods} />
-      <Route path={"/live-oak"} component={LiveOak} />
-      <Route path={"/capitola"} component={Capitola} />
-      <Route path={"/aptos"} component={Aptos} />     <Route path="/buyers" component={Buyers} />
+        <Route path="/live-oak" component={LiveOak} />
+      <Route path="/capitola" component={Capitola} />
+      <Route path="/aptos" component={Aptos} />
+      <Route path="/santa-cruz" component={SantaCruz} />
+      <Route path="/soquel" component={Soquel} />
+      <Route path="/scotts-valley" component={ScottsValley} />
+      <Route path="/buyers" component={Buyers} />
       <Route path="/sellers" component={Sellers} />
       <Route path="/relocation" component={Relocation} />
       <Route path="/blog" component={Blog} />

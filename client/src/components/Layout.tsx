@@ -1,7 +1,13 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Instagram, Facebook, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Menu, Instagram, Facebook, Youtube, Mail, Phone, MapPin, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -9,20 +15,27 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   // Always solid header now
   const isScrolled = true;
 
+  const neighborhoods = [
+    { href: "/santa-cruz", label: "Santa Cruz" },
+    { href: "/live-oak", label: "Live Oak" },
+    { href: "/capitola", label: "Capitola" },
+    { href: "/soquel", label: "Soquel" },
+    { href: "/aptos", label: "Aptos" },
+    { href: "/scotts-valley", label: "Scotts Valley" },
+  ];
+
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/search", label: "Search" },
-    { href: "/neighborhoods", label: "Neighborhoods" },
-    { href: "/live-oak", label: "Live Oak" },
-    { href: "/capitola", label: "Capitola" },
-    { href: "/aptos", label: "Aptos" },
+    // Neighborhoods is handled separately
     { href: "/buyers", label: "Buyers" },
     { href: "/sellers", label: "Sellers" },
     { href: "/relocation", label: "Relocation" },
     { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" },
   ];
+
+  const isNeighborhoodActive = neighborhoods.some(n => n.href === location) || location === "/neighborhoods";
 
   return (
     <div className="min-h-screen flex flex-col font-sans">
@@ -43,7 +56,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {navLinks.slice(0, 3).map((link) => (
               <Link key={link.href} href={link.href}>
                 <span 
                   className={`text-sm font-medium transition-colors hover:text-primary cursor-pointer ${
@@ -56,6 +69,50 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </span>
               </Link>
             ))}
+
+            {/* Neighborhoods Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="outline-none">
+                <span 
+                  className={`text-sm font-medium transition-colors hover:text-primary cursor-pointer flex items-center gap-1 ${
+                    isNeighborhoodActive
+                      ? "text-primary font-bold" 
+                      : "text-foreground/80"
+                  }`}
+                >
+                  Communities <ChevronDown className="h-4 w-4" />
+                </span>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="w-48 bg-white">
+                <Link href="/neighborhoods">
+                  <DropdownMenuItem className="cursor-pointer font-bold">
+                    All Neighborhoods
+                  </DropdownMenuItem>
+                </Link>
+                {neighborhoods.map((n) => (
+                  <Link key={n.href} href={n.href}>
+                    <DropdownMenuItem className="cursor-pointer">
+                      {n.label}
+                    </DropdownMenuItem>
+                  </Link>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {navLinks.slice(3).map((link) => (
+              <Link key={link.href} href={link.href}>
+                <span 
+                  className={`text-sm font-medium transition-colors hover:text-primary cursor-pointer ${
+                    location === link.href 
+                      ? "text-primary font-bold" 
+                      : "text-foreground/80"
+                  }`}
+                >
+                  {link.label}
+                </span>
+              </Link>
+            ))}
+
             <Link href="/contact">
               <Button variant="default" size="sm" className="bg-primary text-white hover:bg-primary/90">
                 Book a Call
@@ -71,10 +128,39 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <div className="flex flex-col gap-8 mt-10">
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-y-auto">
+                <div className="flex flex-col gap-6 mt-10">
                   <div className="flex flex-col gap-4">
-                    {navLinks.map((link) => (
+                    {navLinks.slice(0, 3).map((link) => (
+                      <Link key={link.href} href={link.href}>
+                        <span 
+                          className={`text-lg font-medium transition-colors hover:text-primary cursor-pointer ${
+                            location === link.href ? "text-primary font-bold" : "text-foreground/80"
+                          }`}
+                        >
+                          {link.label}
+                        </span>
+                      </Link>
+                    ))}
+
+                    {/* Mobile Neighborhoods Section */}
+                    <div className="space-y-2">
+                      <span className="text-lg font-bold text-primary">Communities</span>
+                      <div className="pl-4 flex flex-col gap-2 border-l-2 border-primary/20">
+                        <Link href="/neighborhoods">
+                          <span className="text-base font-medium text-foreground/80 hover:text-primary cursor-pointer">All Neighborhoods</span>
+                        </Link>
+                        {neighborhoods.map((n) => (
+                          <Link key={n.href} href={n.href}>
+                            <span className="text-base font-medium text-foreground/80 hover:text-primary cursor-pointer">
+                              {n.label}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+
+                    {navLinks.slice(3).map((link) => (
                       <Link key={link.href} href={link.href}>
                         <span 
                           className={`text-lg font-medium transition-colors hover:text-primary cursor-pointer ${
@@ -86,6 +172,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       </Link>
                     ))}
                   </div>
+                  
                   <div className="flex flex-col gap-4 mt-4">
                     <Link href="/contact">
                       <Button className="w-full">Book a Call</Button>
@@ -130,14 +217,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <h4 className="font-bold mb-4 text-lg">Explore</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/70">
               <li><Link href="/search"><span className="hover:text-white cursor-pointer">Search Properties</span></Link></li>
-              <li><Link href="/live-oak"><span className="hover:text-white cursor-pointer">Live Oak Living</span></Link></li>
-              <li><Link href="/capitola"><span className="hover:text-white cursor-pointer">Capitola Guide</span></Link></li>
-              <li><Link href="/aptos"><span className="hover:text-white cursor-pointer">Aptos Guide</span></Link></li>
-              <li><Link href="/neighborhoods"><span className="hover:text-white cursor-pointer">Neighborhood Guides</span></Link></li>
+              <li><Link href="/neighborhoods"><span className="hover:text-white cursor-pointer">Communities</span></Link></li>
               <li><Link href="/buyers"><span className="hover:text-white cursor-pointer">Buyer Resources</span></Link></li>
               <li><Link href="/sellers"><span className="hover:text-white cursor-pointer">Seller Resources</span></Link></li>
               <li><Link href="/relocation"><span className="hover:text-white cursor-pointer">Relocation Guide</span></Link></li>
               <li><Link href="/blog"><span className="hover:text-white cursor-pointer">Market Insights</span></Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-4 text-lg">Communities</h4>
+            <ul className="space-y-2 text-sm text-primary-foreground/70">
+              <li><Link href="/santa-cruz"><span className="hover:text-white cursor-pointer">Santa Cruz</span></Link></li>
+              <li><Link href="/live-oak"><span className="hover:text-white cursor-pointer">Live Oak</span></Link></li>
+              <li><Link href="/capitola"><span className="hover:text-white cursor-pointer">Capitola</span></Link></li>
+              <li><Link href="/soquel"><span className="hover:text-white cursor-pointer">Soquel</span></Link></li>
+              <li><Link href="/aptos"><span className="hover:text-white cursor-pointer">Aptos</span></Link></li>
+              <li><Link href="/scotts-valley"><span className="hover:text-white cursor-pointer">Scotts Valley</span></Link></li>
             </ul>
           </div>
 
@@ -158,19 +254,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </li>
             </ul>
           </div>
-
-          <div>
-            <h4 className="font-bold mb-4 text-lg">Legal</h4>
-            <div className="text-xs text-primary-foreground/60 space-y-2">
-              <p>DRE #02105568</p>
-              <p>NMLS #123456</p>
-              <p>© {new Date().getFullYear()} Shaye Carter. All rights reserved.</p>
-              <div className="flex gap-2 mt-2">
-                <a href="#" className="hover:text-white">Privacy Policy</a>
-                <span>|</span>
-                <a href="#" className="hover:text-white">Terms of Service</a>
-              </div>
-            </div>
+        </div>
+        <div className="container mt-12 pt-8 border-t border-primary-foreground/10 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="text-xs text-primary-foreground/60 space-y-1">
+            <p>DRE #02105568 | NMLS #123456</p>
+            <p>© {new Date().getFullYear()} Shaye Carter. All rights reserved.</p>
+          </div>
+          <div className="flex gap-4 text-xs text-primary-foreground/60">
+            <a href="#" className="hover:text-white">Privacy Policy</a>
+            <span>|</span>
+            <a href="#" className="hover:text-white">Terms of Service</a>
           </div>
         </div>
       </footer>
