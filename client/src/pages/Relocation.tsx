@@ -2,8 +2,14 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import { CheckCircle2, Download, Sun, Wifi, Map, Calendar } from "lucide-react";
 import { Link } from "wouter";
+import { useMetaTags } from "@/hooks/use-meta-tags";
 
 export default function Relocation() {
+  useMetaTags({
+    title: "Relocating to Santa Cruz? Your Complete Guide",
+    description: "Planning a move to Santa Cruz? Get expert advice on neighborhoods, cost of living, and the microclimate advantage from a local relocation specialist."
+  });
+
   return (
     <Layout>
       {/* Hero Section */}

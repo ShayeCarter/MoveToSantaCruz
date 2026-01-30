@@ -2,8 +2,14 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import { CheckCircle2, Download, TrendingUp, DollarSign, Users } from "lucide-react";
 import { Link } from "wouter";
+import { useMetaTags } from "@/hooks/use-meta-tags";
 
 export default function Sellers() {
+  useMetaTags({
+    title: "Selling Your Home in Santa Cruz | Expert Seller's Guide",
+    description: "Maximize your home's value with Shaye Carter's proven selling framework. Learn how to avoid the 'Six-Figure Mistake' and sell with confidence in Live Oak and beyond."
+  });
+
   return (
     <Layout>
       {/* Hero Section */}
