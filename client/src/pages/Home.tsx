@@ -57,6 +57,7 @@ export default function Home() {
               src="/images/shaye-meeting.jpg" 
               alt="Shaye Carter meeting with clients" 
               className="rounded-lg shadow-xl w-full object-cover aspect-[4/3]"
+              loading="lazy"
             />
           </div>
           <div className="space-y-6">
@@ -120,6 +121,7 @@ export default function Home() {
                   src="/images/live-oak-neighborhood.jpg" 
                   alt="Live Oak" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
                 <div className="absolute bottom-0 left-0 p-6 text-white">
@@ -141,6 +143,7 @@ export default function Home() {
                   src="/images/santa-cruz-lifestyle.jpg" 
                   alt="Pleasure Point" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
                 <div className="absolute bottom-0 left-0 p-6 text-white">
@@ -162,6 +165,7 @@ export default function Home() {
                   src="/images/hero-home.jpg" 
                   alt="Westside" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
                 <div className="absolute bottom-0 left-0 p-6 text-white">
