@@ -3,8 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Home as HomeIcon, TrendingUp, Users, MapPin, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
+import { useMetaTags } from "@/hooks/use-meta-tags";
 
 export default function Home() {
+  useMetaTags({
+    title: "Santa Cruz Real Estate & Mortgage | Shaye Carter",
+    description: "Your local guide to real estate and mortgage in Live Oak and beyond. Smart advice, coastal vibes, and zero stress with Shaye Carter.",
+    image: "/images/hero-home.jpg"
+  });
+
   return (
     <Layout>
       {/* Hero Section */}

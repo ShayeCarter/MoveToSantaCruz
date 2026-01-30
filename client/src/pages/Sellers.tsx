@@ -7,7 +7,8 @@ import { useMetaTags } from "@/hooks/use-meta-tags";
 export default function Sellers() {
   useMetaTags({
     title: "Selling Your Home in Santa Cruz | Expert Seller's Guide",
-    description: "Maximize your home's value with Shaye Carter's proven selling framework. Learn how to avoid the 'Six-Figure Mistake' and sell with confidence in Live Oak and beyond."
+    description: "Maximize your home's value with Shaye Carter's proven selling framework. Learn how to avoid the 'Six-Figure Mistake' and sell with confidence in Live Oak and beyond.",
+    image: "/images/kitchen-interior.jpg"
   });
 
   return (

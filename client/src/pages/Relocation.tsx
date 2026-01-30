@@ -7,7 +7,8 @@ import { useMetaTags } from "@/hooks/use-meta-tags";
 export default function Relocation() {
   useMetaTags({
     title: "Relocating to Santa Cruz? Your Complete Guide",
-    description: "Planning a move to Santa Cruz? Get expert advice on neighborhoods, cost of living, and the microclimate advantage from a local relocation specialist."
+    description: "Planning a move to Santa Cruz? Get expert advice on neighborhoods, cost of living, and the microclimate advantage from a local relocation specialist.",
+    image: "/images/santa-cruz-beach.jpg"
   });
 
   return (

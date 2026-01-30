@@ -7,7 +7,8 @@ import { useMetaTags } from "@/hooks/use-meta-tags";
 export default function Buyers() {
   useMetaTags({
     title: "Buying a Home in Santa Cruz | 2025 Buyer's Guide",
-    description: "Navigate the Santa Cruz real estate market with confidence. Get the latest insights on pricing, neighborhoods, and the new 2025 buyer rules."
+    description: "Navigate the Santa Cruz real estate market with confidence. Get the latest insights on pricing, neighborhoods, and the new 2025 buyer rules.",
+    image: "/images/santa-cruz-lifestyle.jpg"
   });
 
   return (
